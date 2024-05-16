@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoveQuest 520</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        .task {
+            margin: 20px 0;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LoveQuest 520</h1>
+        <p>Welcome to LoveQuest 520! Complete the coding tasks to help our characters express their love.</p>
+        <div class="task">
+            <h2>Task 1: Generate a Love Poem</h2>
+            <button onclick="generatePoem()">Generate Poem</button>
+            <div class="output" id="poemOutput"></div>
+        </div>
+        <div class="task">
+            <h2>Task 2: Draw a Heart</h2>
+            <button onclick="drawHeart()">Draw Heart</button>
+            <div class="output" id="heartOutput"></div>
+        </div>
+        <div class="task">
+            <h2>Task 3: Send a Gift</h2>
+            <button onclick="sendGift()">Send Gift</button>
+            <div class="output" id="giftOutput"></div>
+        </div>
+    </div>
+    <script>
+        function generatePoem() {
+            const poem = `
+                Love is like a beautiful rose,
+                With petals soft and red.
+                It grows with care and nurtures,
+                In the garden of the heart, it’s bred.
+            `;
+            document.getElementById('poemOutput').innerText = poem;
+        }
+
+        function drawHeart() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 200;
+            canvas.height = 200;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'red';
+            ctx.beginPath();
+            ctx.moveTo(100, 75);
+            ctx.bezierCurveTo(100, 37, 150, 37, 150, 75);
+            ctx.bezierCurveTo(150, 112, 100, 150, 100, 187);
+            ctx.bezierCurveTo(100, 150, 50, 112, 50, 75);
+            ctx.bezierCurveTo(50, 37, 100, 37, 100, 75);
+            ctx.fill();
+            document.getElementById('heartOutput').innerHTML = '';
+            document.getElementById('heartOutput').appendChild(canvas);
+        }
+
+        function sendGift() {
+            const giftMessage = `
+                Alice moves forward 5 steps and gives a rose to Bob.
+                Bob moves forward 3 steps and gives a box of chocolates to Alice.
+            `;
+            document.getElementById('giftOutput').innerText = giftMessage;
+        }
+    </script>
+</body>
+</html>
